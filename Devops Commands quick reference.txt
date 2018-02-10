@@ -101,7 +101,7 @@ PUPPET COMMANDS
 	192.168.0.176  node1
 	sudo  curl -O https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
 	sudo dpkg -i puppetlabs-release-pc1-xenial.deb
-	sudo apt-get update –y
+	sudo apt-get update
 	sudo apt-get install puppetserver
 	sudo ufw allow 8140
 	sudo vi /etc/default/puppetserver
@@ -210,10 +210,10 @@ CHEF COMMANDS
 	vagrant ssh developmentkit
 	ls  /vagrant
 	sudo dpkg -i /vagrant/chefdk_0.9.0-1_amd64.deb
+	mkdir cookbooks
 	mkdir .chef
 	vi .chef/knife.rb
    	cookbook_path ['/home/vagrant/cookbooks']  //In knife.rb
-	mkdir cookbooks
 	cd cookbooks
 	chef generate cookbook my_cookbook 
 	ls my_cookbook/  
