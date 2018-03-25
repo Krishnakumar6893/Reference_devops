@@ -27,8 +27,10 @@ git reset
 ANT COMMANDS
 
 ant clean
-ant
+ant init
 ant compile
+ant war
+ant
 ------------------------------------------------------------------------------------------------------------------------
 MAVEN COMMANDS
 
@@ -38,12 +40,15 @@ mvn verify
 mvn install
 mvn clean install
 mvn test
+mvn sonar:sonar
+mvn clean install sonar:sonar
 ------------------------------------------------------------------------------------------------------------------------
 GRADLE COMMANDS
 
 gradle clean
 gradle assemble
 gradle build
+gradle help
 ------------------------------------------------------------------------------------------------------------------------
 VAGRANTUP COMMANDS
 
