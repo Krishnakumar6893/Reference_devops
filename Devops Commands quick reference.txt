@@ -299,10 +299,8 @@ CHEF COMMANDS
 	dpkg -i /vagrant/chef-server-core_XXXXXXXX.deb //install chef server software in chef server
 	chef-server-ctl reconfigure
 	chef-server-ctl user-create admin admin admin admin@example.com LearnDevops -f admin.pem
-	chef-server-ctl org-create learndevops "Learn Devops Course" --association_user admin -f org.pem //optional
+	chef-server-ctl org-create learndevops "Learn Devops Course" --association_user admin 
 
-	cp admin.pem org.pem /vagrant  
-	or 
 	cp admin.pem /vagrant 	
 	exit
 ------------------------------------------------------------------------------------------------------------------------
@@ -326,7 +324,7 @@ CHEF COMMANDS
 	cat .chef/knife.rb // to display all above commands - to verify
 	knife ssl fetch
 	knife client list // it will shows learndevops-validator
-	knife bootstrap node.example.com -N node -s -x vagrant --sudo  // it will ask vagrant password - enter "vagrant"
+	knife bootstrap node.example.com -N node -x vagrant --sudo  // it will ask vagrant password - enter "vagrant"
 	knife client list  //it will show node also
 
 	cd cookbooks/
