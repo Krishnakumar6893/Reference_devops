@@ -20,9 +20,11 @@ git checkout branchname
 git merge branchname1 branchname2
 git rebase branchname1 branchname2
 git branch -d branchname1 //delete the merged branch
-git diff
-git revert
-git reset
+git diff commitid1 commitid2
+git revert commitid
+git reset commitid
+git reset --soft commitid
+git reset --hard commitid
 ------------------------------------------------------------------------------------------------------------------------
 ANT COMMANDS
 
