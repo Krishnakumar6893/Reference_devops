@@ -52,6 +52,35 @@ gradle assemble
 gradle build
 gradle help
 ------------------------------------------------------------------------------------------------------------------------
+Jenkins pipeline
+
+node  {
+    
+    stage ("scm")
+    {
+    git 'https://github.com/ghanigreen/maven_demo.git'
+    }
+    stage ("build")
+    {
+    bat 'mvn clean install'
+    }
+    stage ("archive")
+    {
+    archiveArtifacts '**/*.war'
+    }
+    stage("junit")
+    {
+    junit healthScaleFactor: 10.0, testResults: '**/gameoflife-web/target/surefire-reports/*.xml'
+    }
+    stage("deploy")
+    {
+    sh 'cp -R "E:\\workspace\\newpipeline\\gameoflife-web\\target\\gameoflife.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps"'
+    }
+    
+}
+
+--------------------------------------------------------------------------------------------------------------
+
 VAGRANTUP COMMANDS
 
 vagrant box
